@@ -1,2 +1,8 @@
 node_modules
 
+# Build files
+dist/
+storybook-static/
+
+# VSC
+.vscode/
