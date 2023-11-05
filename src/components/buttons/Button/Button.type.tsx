@@ -1,3 +1,6 @@
+import { Fonts } from 'src/constants';
+import { ValueOf } from 'src/types';
+
 export type ButtonProps = {
   buttonText: string;
   width?: string;
@@ -6,5 +9,5 @@ export type ButtonProps = {
   isPrimary?: boolean;
   px?: string;
   py?: string;
-  fontStyle?: string;
+  fontStyle?: ValueOf<typeof Fonts>;
 };

@@ -1,16 +1,8 @@
-import { fonts, theme } from '../../../styles/theme';
-import { ThemeProvider, styled } from 'styled-components';
-
-type Props = {
-  buttonText: string;
-  width?: string;
-  height?: string;
-  onClick?: () => void;
-  isPrimary?: boolean;
-  px?: string;
-  py?: string;
-  fontStyle?: string;
-};
+import { ButtonProps } from 'src/components/buttons/Button/Button.type';
+import { Fonts } from '../../../constants/fonts';
+import { theme } from '../../../styles/theme';
+import { ThemeProvider } from 'styled-components';
+import * as S from './button.styles';
 
 export const Button = ({
   buttonText,
@@ -20,11 +12,11 @@ export const Button = ({
   height = '58px',
   px = '24px',
   py = '26px',
-  fontStyle = fonts.subtitle2,
-}: Props) => {
+  fontStyle = Fonts.subtitle2,
+}: ButtonProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <ButtonWrapper
+      <S.ButtonWrapper
         $width={width}
         $height={height}
         $isPrimary={isPrimary}
@@ -34,37 +26,7 @@ export const Button = ({
         $fontStyle={fontStyle}
       >
         {buttonText}
-      </ButtonWrapper>
+      </S.ButtonWrapper>
     </ThemeProvider>
   );
 };
-
-const ButtonWrapper = styled.button<{
-  $isPrimary: boolean;
-  $width: string;
-  $height: string;
-  $px: string;
-  $py: string;
-  $fontStyle: string;
-}>`
-  display: flex;
-  width: ${({ $width }) => $width};
-  height: ${({ $height }) => $height};
-  padding: ${({ $py }) => $py} ${({ $px }) => $px};
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 8px;
-  background: ${({ theme, $isPrimary }) =>
-    $isPrimary ? theme.colors.primary1 : theme.colors.white};
-  color: ${({ theme, $isPrimary }) =>
-    $isPrimary ? theme.colors.white : theme.colors.primary1};
-  font: ${({ theme, $fontStyle }) => theme.fonts[$fontStyle]};
-  line-height: 150%;
-  letter-spacing: -0.36px;
-  border: ${({ $isPrimary, theme }) =>
-    !$isPrimary
-      ? `1px solid ${theme.colors.grey1}`
-      : `1px solid ${theme.colors.primary1} `};
-  cursor: pointer;
-`;

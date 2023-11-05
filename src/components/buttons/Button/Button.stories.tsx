@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Button } from './Button';
-import { fonts } from '../../../styles/theme';
+import { Fonts } from '../../../constants/fonts';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Buttons/Button',
@@ -23,5 +23,5 @@ Playground.args = {
   height: '58px',
   px: '24px',
   py: '26px',
-  fontStyle: fonts.subtitle2,
+  fontStyle: Fonts.subtitle2,
 };
