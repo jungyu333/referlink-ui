@@ -1,9 +1,19 @@
 {
   "name": "referlink-ui",
-  "version": "1.0.0",
+  "version": "0.0.5",
   "description": "",
-  "main": "index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/types/index.d.ts",
+  "private": false,
+  "browser": "./browser/specific/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jungyu333/referlink-ui"
+  },
   "scripts": {
+    "build": "tsc --emitDeclarationOnly & rollup -c --bundleConfigAsCjs",
+    "dev": "tsc --emitDeclarationOnly & rollup -c -w --bundleConfigAsCjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -14,7 +24,10 @@
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.23.2",
+    "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-image": "^3.0.3",
+    "@rollup/plugin-json": "^6.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.5",
     "@storybook/addon-docs": "^7.5.2",
@@ -28,6 +41,8 @@
     "babel-plugin-styled-components": "^2.1.4",
     "prop-types": "^15.8.1",
     "rollup": "^4.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.36.0",
     "storybook": "^7.5.2",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2"
@@ -36,5 +51,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.0.7"
-  }
+  },
+  "peerDependencies": {}
 }

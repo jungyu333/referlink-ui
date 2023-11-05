@@ -1,5 +1,5 @@
-import { fonts } from '../../../styles/theme';
-import { styled } from 'styled-components';
+import { fonts, theme } from '../../../styles/theme';
+import { ThemeProvider, styled } from 'styled-components';
 
 type Props = {
   buttonText: string;
@@ -23,17 +23,19 @@ export const Button = ({
   fontStyle = fonts.subtitle2,
 }: Props) => {
   return (
-    <ButtonWrapper
-      $width={width}
-      $height={height}
-      $isPrimary={isPrimary}
-      onClick={onClick}
-      $px={px}
-      $py={py}
-      $fontStyle={fontStyle}
-    >
-      {buttonText}
-    </ButtonWrapper>
+    <ThemeProvider theme={theme}>
+      <ButtonWrapper
+        $width={width}
+        $height={height}
+        $isPrimary={isPrimary}
+        onClick={onClick}
+        $px={px}
+        $py={py}
+        $fontStyle={fontStyle}
+      >
+        {buttonText}
+      </ButtonWrapper>
+    </ThemeProvider>
   );
 };
 
