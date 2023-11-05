@@ -17,6 +17,7 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.5",
+    "@storybook/addon-docs": "^7.5.2",
     "@storybook/addon-essentials": "^7.5.2",
     "@storybook/addon-interactions": "^7.5.2",
     "@storybook/addon-links": "^7.5.2",
@@ -24,15 +25,16 @@
     "@storybook/react": "^7.5.2",
     "@storybook/react-webpack5": "^7.5.2",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "babel-plugin-styled-components": "^2.1.4",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "rollup": "^4.2.0",
     "storybook": "^7.5.2",
+    "ts-loader": "^9.5.0",
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "styled-components": "^6.0.7",
-    "ts-loader": "^9.5.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.7"
   }
 }

@@ -4,15 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../src/styles/global';
 import React from 'react';
 
-const withThemeProvider = (Story, context) => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Story {...context} />
-  </ThemeProvider>
-);
-
 const preview: Preview = {
-  decorators: [withThemeProvider],
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -22,6 +14,14 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
 };
 
 export default preview;

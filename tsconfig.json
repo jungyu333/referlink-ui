@@ -16,11 +16,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    //"jsxImportSource": "@emotion/react",
     "incremental": true,
     "baseUrl": "./",
     "noEmit": false
   },
-  "include": ["src/**/*", "node_modules/*"],
+  "include": ["src", "node_modules/*"],
   "exclude": ["node_modules", "dist", "src/**/*.stories.tsx", "src/docs/*"]
 }
