@@ -1,8 +1,7 @@
 import { ButtonProps } from 'src/components/buttons/Button/Button.type';
 import { Fonts } from '../../../constants/fonts';
-import { theme } from '../../../styles/theme';
-import { ThemeProvider } from 'styled-components';
 import * as S from './button.styles';
+import { UIProvider } from '../../general/UIProvider';
 
 export const Button = ({
   buttonText,
@@ -15,7 +14,7 @@ export const Button = ({
   fontStyle = Fonts.subtitle2,
 }: ButtonProps) => {
   return (
-    <ThemeProvider theme={theme}>
+    <UIProvider>
       <S.ButtonWrapper
         $width={width}
         $height={height}
@@ -27,6 +26,6 @@ export const Button = ({
       >
         {buttonText}
       </S.ButtonWrapper>
-    </ThemeProvider>
+    </UIProvider>
   );
 };
