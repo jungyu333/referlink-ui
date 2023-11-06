@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { ButtonTypes } from '../../../constants';
 
 export const ButtonWrapper = styled.button<{
-  $isPrimary: boolean;
+  $buttonType: string;
   $width: string;
   $height: string;
   $px: string;
@@ -16,16 +17,33 @@ export const ButtonWrapper = styled.button<{
   align-items: center;
   gap: 10px;
   border-radius: 8px;
-  background: ${({ theme, $isPrimary }) =>
-    $isPrimary ? theme.colors.primary1 : theme.colors.white};
-  color: ${({ theme, $isPrimary }) =>
-    $isPrimary ? theme.colors.white : theme.colors.primary1};
+  background: ${({ theme, $buttonType }) =>
+    $buttonType === ButtonTypes.filled
+      ? theme.colors.primary1
+      : theme.colors.white};
+  color: ${({ theme, $buttonType }) =>
+    $buttonType === ButtonTypes.filled
+      ? theme.colors.white
+      : theme.colors.grey2};
   font: ${({ theme, $fontStyle }) => theme.fonts[$fontStyle]};
   line-height: 150%;
   letter-spacing: -0.36px;
-  border: ${({ $isPrimary, theme }) =>
-    !$isPrimary
+  border: ${({ $buttonType, theme }) =>
+    $buttonType !== ButtonTypes.filled
       ? `1px solid ${theme.colors.grey1}`
       : `1px solid ${theme.colors.primary1} `};
   cursor: pointer;
+
+  &:hover {
+    background-color: ${({ theme, $buttonType }) =>
+      $buttonType === ButtonTypes.filled ? theme.colors.primary2 : ''};
+
+    border: ${({ theme, $buttonType }) =>
+      $buttonType === ButtonTypes.outlined
+        ? `1px solid ${theme.colors.primary1} `
+        : ''};
+
+    color: ${({ theme, $buttonType }) =>
+      $buttonType === ButtonTypes.outlined ? theme.colors.primary1 : ''};
+  }
 `;

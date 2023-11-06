@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Button } from './Button';
 import { Fonts } from '../../../constants/fonts';
+import { ButtonTypes } from '../../../constants';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Buttons/Button',
@@ -18,7 +19,7 @@ export const Playground: Story = (args) => {
 
 Playground.args = {
   buttonText: 'Button',
-  isPrimary: true,
+  buttonType: ButtonTypes.filled,
   width: '200px',
   height: '58px',
   px: '24px',
