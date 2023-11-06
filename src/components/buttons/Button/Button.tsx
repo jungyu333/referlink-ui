@@ -1,9 +1,9 @@
-import { ButtonProps } from 'src/components/buttons/Button/Button.type';
 import { Fonts } from '../../../constants/fonts';
 import * as S from './button.styles';
 import { UIProvider } from '../../general/UIProvider';
 import { ButtonTypes } from '../../../constants/buttons';
 import { svgMy } from '../../../assets';
+import { ButtonProps } from './Button.type';
 
 export const Button = ({
   buttonText,
