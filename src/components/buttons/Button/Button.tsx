@@ -3,6 +3,7 @@ import { Fonts } from '../../../constants/fonts';
 import * as S from './button.styles';
 import { UIProvider } from '../../general/UIProvider';
 import { ButtonTypes } from '../../../constants/buttons';
+import { svgMy } from '../../../assets';
 
 export const Button = ({
   buttonText,
@@ -13,6 +14,7 @@ export const Button = ({
   px = '24px',
   py = '26px',
   fontStyle = Fonts.subtitle2,
+  isIcon = false,
 }: ButtonProps) => {
   return (
     <UIProvider>
@@ -25,7 +27,10 @@ export const Button = ({
         $py={py}
         $fontStyle={fontStyle}
       >
-        {buttonText}
+        <div>
+          {isIcon && svgMy}
+          {buttonText}
+        </div>
       </S.ButtonWrapper>
     </UIProvider>
   );

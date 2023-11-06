@@ -9,7 +9,7 @@ export const ButtonWrapper = styled.button<{
   $py: string;
   $fontStyle: string;
 }>`
-  display: flex;
+  display: inline-flex;
   width: ${({ $width }) => $width};
   height: ${({ $height }) => $height};
   padding: ${({ $py }) => $py} ${({ $px }) => $px};
@@ -34,6 +34,17 @@ export const ButtonWrapper = styled.button<{
       : `1px solid ${theme.colors.primary1} `};
   cursor: pointer;
 
+  & > div {
+    & svg {
+      & > * {
+        fill: ${({ theme, $buttonType }) =>
+          $buttonType === ButtonTypes.filled
+            ? theme.colors.white
+            : theme.colors.grey2};
+      }
+    }
+  }
+
   &:hover {
     background-color: ${({ theme, $buttonType }) =>
       $buttonType === ButtonTypes.filled ? theme.colors.primary2 : ''};
@@ -45,5 +56,20 @@ export const ButtonWrapper = styled.button<{
 
     color: ${({ theme, $buttonType }) =>
       $buttonType === ButtonTypes.outlined ? theme.colors.primary1 : ''};
+
+    & > div {
+      & svg {
+        & > * {
+          fill: ${({ theme, $buttonType }) =>
+            $buttonType === ButtonTypes.outlined ? theme.colors.primary1 : ''};
+        }
+      }
+    }
+  }
+
+  & > div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 `;
