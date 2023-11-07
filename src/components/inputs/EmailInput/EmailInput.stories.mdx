@@ -1,0 +1,27 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { EmailInput } from './EmailInput';
+
+<Meta title="Components/Inputs/EmailInput" component={EmailInput} />
+
+# Email Input
+
+<br />
+
+## Button Type
+
+### 1. Default
+
+<Canvas>
+  <Story name="Default">
+    {() => (
+      <EmailInput
+        label="Email"
+        placeholder="please enter email"
+        regisger={undefined}
+        width="400px"
+        height="56px"
+        isLabel={true}
+      />
+    )}
+  </Story>
+</Canvas>
