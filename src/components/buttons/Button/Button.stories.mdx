@@ -1,5 +1,8 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Button } from './Button';
+import { ButtonTypes } from '../../../constants';
+import { FeatureTable, Preview } from '../../../docs';
+import { svgMy } from '../../../assets';
 
 <Meta title="Components/Buttons/Button" component={Button} />
 
@@ -7,14 +10,145 @@ import { Button } from './Button';
 
 <br />
 
+## Features
+
+<FeatureTable
+  basics={['Button Text', '클릭 시 동작']}
+  additionals={[
+    'Button 타입 설정 (Default filled)',
+    'width (Default 400px)',
+    'height (Default 58px)',
+    'px (Default 24px)',
+    'px (Default 26px)',
+    'fontStyle (Default subtitle2)',
+    '비활성화',
+    '아이콘 삽입 유무 (Default false)',
+    '삽입 Icon',
+  ]}
+/>
+
+## Props
+
+```tsx
+export type ButtonProps = {
+  buttonText: string;
+  svgIcon: JSX.Element;
+  width?: string;
+  height?: string;
+  onClick?: Handler<() => void>;
+  buttonType?: ValueOf<typeof ButtonTypes>;
+  px?: string;
+  py?: string;
+  fontStyle?: ValueOf<typeof Fonts>;
+  isIcon?: boolean;
+};
+```
+
 ## Button Type
 
 ### 1. Default
 
-<Canvas>
-  <Story name="Default">
-    {() => (
-      <Button buttonText="Button" onClick={() => console.log('button click')} />
-    )}
-  </Story>
-</Canvas>
+<Preview>
+  <Button buttonText="Button" onClick={() => console.log('button click')} />
+</Preview>
+
+```tsx
+<Button buttonText="Button" onClick={() => console.log('button click')} />
+```
+
+### 2. Outlined
+
+<Preview>
+  <Button
+    buttonText="Button"
+    buttonType={ButtonTypes.outlined}
+    onClick={() => console.log('button click')}
+  />
+</Preview>
+
+```tsx
+<Button
+  buttonText="Button"
+  buttonType={ButtonTypes.outlined}
+  onClick={() => console.log('button click')}
+/>
+```
+
+### 3. WithIcon
+
+<Preview>
+  <Button
+    buttonText="Button"
+    onClick={() => console.log('button click')}
+    isIcon
+    svgIcon={svgMy}
+  />
+
+</Preview>
+
+<Preview>
+  <Button
+    buttonText="Button"
+    buttonType={ButtonTypes.outlined}
+    onClick={() => console.log('button click')}
+    isIcon
+    svgIcon={svgMy}
+  />
+</Preview>
+
+```tsx
+<Button
+  buttonText="Button"
+  onClick={() => console.log('button click')}
+  isIcon
+  svgIcon={svgMy}
+/>
+
+ <Button
+    buttonText="Button"
+    buttonType={ButtonTypes.outlined}
+    onClick={() => console.log('button click')}
+    isIcon
+    svgIcon={svgMy}
+  />
+```
+
+### 4. Disable
+
+<Preview>
+  <Button
+    buttonText="Button"
+    buttonType={ButtonTypes.filled}
+    onClick={() => console.log('button click')}
+    isDisabled
+  />
+</Preview>
+
+<Preview>
+  <Button
+    buttonText="Button"
+    buttonType={ButtonTypes.filled}
+    onClick={() => console.log('button click')}
+    isDisabled
+    isIcon
+    svgIcon={svgMy}
+  />
+</Preview>
+
+```tsx
+ <Button
+    buttonText="Button"
+    buttonType={ButtonTypes.filled}
+    onClick={() => console.log('button click')}
+    isDisabled
+  />
+
+    <Button
+    buttonText="Button"
+    buttonType={ButtonTypes.filled}
+    onClick={() => console.log('button click')}
+    isDisabled
+    isIcon
+    svgIcon={svgMy}
+  />
+```

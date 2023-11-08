@@ -16,6 +16,7 @@ export const Button = ({
   py = '26px',
   fontStyle = Fonts.subtitle2,
   isIcon = false,
+  isDisabled = false,
 }: ButtonProps) => {
   return (
     <UIProvider>
@@ -27,6 +28,8 @@ export const Button = ({
         $px={px}
         $py={py}
         $fontStyle={fontStyle}
+        $isDisabled={isDisabled}
+        disabled={isDisabled}
       >
         <div>
           {isIcon && svgIcon}

@@ -13,4 +13,5 @@ export type ButtonProps = {
   py?: string;
   fontStyle?: ValueOf<typeof Fonts>;
   isIcon?: boolean;
+  isDisabled?: boolean;
 };
