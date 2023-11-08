@@ -8,6 +8,7 @@ import { ButtonProps } from './Button.type';
 export const Button = ({
   buttonText,
   onClick,
+  svgIcon,
   buttonType = ButtonTypes.filled,
   width = '400px',
   height = '58px',
@@ -28,7 +29,7 @@ export const Button = ({
         $fontStyle={fontStyle}
       >
         <div>
-          {isIcon && svgMy}
+          {isIcon && svgIcon}
           {buttonText}
         </div>
       </S.ButtonWrapper>
