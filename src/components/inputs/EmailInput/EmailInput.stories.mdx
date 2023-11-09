@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { EmailInput } from './EmailInput';
+import { FeatureTable, Preview } from '../../../docs';
 
 <Meta title="Components/Inputs/EmailInput" component={EmailInput} />
 
@@ -7,21 +8,103 @@ import { EmailInput } from './EmailInput';
 
 <br />
 
-## Button Type
+## Features
+
+<FeatureTable
+  basics={['라벨', 'placeholder', 'register']}
+  additionals={[
+    'error 필드 메세지',
+    'width (Default  400px)',
+    'height (Default  56px)',
+    '라벨 출력 옵션 (Default  true)',
+  ]}
+/>
+
+## Props
+
+```tsx
+export type EmailInputProps = {
+  label: string;
+  placeholder: string;
+  register: UseFormRegisterReturn; // react-hook-form
+  error?: string;
+  width?: string;
+  height?: string;
+  isLabel?: boolean;
+};
+```
+
+## EmailInput Type
 
 ### 1. Default
 
-<Canvas>
-  <Story name="Default">
-    {() => (
-      <EmailInput
-        label="Email"
-        placeholder="please enter email"
-        regisger={undefined}
-        width="400px"
-        height="56px"
-        isLabel={true}
-      />
-    )}
-  </Story>
-</Canvas>
+<Preview>
+  <EmailInput label="Email" placeholder="placeholder" register={undefined} />
+</Preview>
+
+```tsx
+<EmailInput
+  label="Email"
+  placeholder="placeholder"
+  register={register('email', {
+    pattern: {
+      value: emailRegex,
+      message: '형식에 맞지 않는 이메일입니다.',
+    },
+    required: '이메일을 입력해주세요.',
+  })}
+/>
+```
+
+### 2. No Label
+
+<Preview>
+  <EmailInput
+    label=""
+    isLabel={false}
+    placeholder="placeholder"
+    register={undefined}
+  />
+</Preview>
+
+```tsx
+<EmailInput
+  label=""
+  isLabel={false}
+  placeholder="placeholder"
+  register={register('email', {
+    pattern: {
+      value: emailRegex,
+      message: '형식에 맞지 않는 이메일입니다.',
+    },
+    required: '이메일을 입력해주세요.',
+  })}
+/>
+```
+
+### 3. Error Message
+
+<Preview>
+  <EmailInput
+    label="Email"
+    placeholder="placeholder"
+    register={undefined}
+    error="error message"
+/>
+
+</Preview>
+
+```tsx
+<EmailInput
+  label="Email"
+  placeholder="placeholder"
+  register={register('email', {
+    pattern: {
+      value: emailRegex,
+      message: '형식에 맞지 않는 이메일입니다.',
+    },
+    required: '이메일을 입력해주세요.',
+  })}
+  error="error message"
+/>
+```
