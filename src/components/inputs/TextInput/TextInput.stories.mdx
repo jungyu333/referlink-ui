@@ -1,27 +1,110 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Story } from '@storybook/addon-docs/blocks';
 import { TextInput } from './TextInput';
+import { FeatureTable, Preview } from '../../../docs';
 
 <Meta title="Components/Inputs/TextInput" component={TextInput} />
 
-# Email Input
+# Text Input
 
 <br />
 
-## Button Type
+## Features
+
+<FeatureTable
+  basics={['라벨', 'placeholder', 'register']}
+  additionals={[
+    'error 필드 메세지',
+    'width (Default  400px)',
+    'height (Default  56px)',
+    '라벨 출력 옵션 (Default  true)',
+  ]}
+/>
+
+## Props
+
+```tsx
+export type TextInputProps = {
+  label: string;
+  placeholder: string;
+  register: UseFormRegisterReturn; // react-hook-form
+  error?: string;
+  width?: string;
+  height?: string;
+  isLabel?: boolean;
+};
+```
+
+## TextInput Type
 
 ### 1. Default
 
-<Canvas>
-  <Story name="Default">
-    {() => (
-      <TextInput
-        label="Text"
-        placeholder="please enter text"
-        regisger={undefined}
-        width="400px"
-        height="56px"
-        isLabel={true}
-      />
-    )}
-  </Story>
-</Canvas>
+<Preview>
+  <TextInput label="Text" placeholder="placeholder" register={undefined} />
+</Preview>
+
+```tsx
+<TextInput
+  label="Text"
+  placeholder="placeholder"
+  register={register('job', {
+    maxLength: {
+      value: 10,
+      message: '10자 이내로 입력해주세요.',
+    },
+    required: 'temp',
+  })}
+/>
+```
+
+### 2. No Label
+
+<Preview>
+  <TextInput
+    label=""
+    isLabel={false}
+    placeholder="placeholder"
+    register={undefined}
+  />
+</Preview>
+
+```tsx
+<TextInput
+  label=""
+  isLabel={false}
+  placeholder="placeholder"
+  register={register('job', {
+    maxLength: {
+      value: 10,
+      message: '10자 이내로 입력해주세요.',
+    },
+    required: 'temp',
+  })}
+/>
+```
+
+### 3. Error Message
+
+<Preview>
+  <TextInput
+    label="Text"
+    placeholder="placeholder"
+    register={undefined}
+    error="error message"
+/>
+
+</Preview>
+
+```tsx
+<TextInput
+  label="Text"
+  placeholder="placeholder"
+  register={register('job', {
+    maxLength: {
+      value: 10,
+      message: '10자 이내로 입력해주세요.',
+    },
+    required: 'temp',
+  })}
+  error="error message"
+/>
+```
