@@ -4,7 +4,7 @@ import { Handler, ValueOf } from '../../../types';
 
 export type ButtonProps = {
   buttonText: string;
-  svgIcon: JSX.Element;
+  svgIcon?: JSX.Element;
   width?: string;
   height?: string;
   onClick?: Handler<() => void>;

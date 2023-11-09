@@ -32,7 +32,7 @@ import { svgMy } from '../../../assets';
 ```tsx
 export type ButtonProps = {
   buttonText: string;
-  svgIcon: JSX.Element;
+  svgIcon?: JSX.Element;
   width?: string;
   height?: string;
   onClick?: Handler<() => void>;
