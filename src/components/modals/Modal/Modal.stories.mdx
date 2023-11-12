@@ -1,0 +1,128 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Modal } from './Modal';
+import { Button } from '../../buttons/Button';
+import { useState } from 'react';
+import { FeatureTable, Preview } from '../../../docs';
+
+<Meta title="Components/Modal/Modal" component={Modal} />
+
+# Modal
+
+<br />
+
+## Features
+
+<FeatureTable
+  basics={['isOpen', 'close 콜백 함수', 'children']}
+  additionals={[
+    'px (Default  48px)',
+    'py (Default  60px)',
+    'gap (Default  35px)',
+  ]}
+/>
+
+## Props
+
+```tsx
+export type ModalProps = {
+  isOpen: boolean;
+  onClose: Handler<() => void>;
+  children: ReactElement;
+  px?: string;
+  py?: string;
+  gap?: string;
+};
+```
+
+## Basic
+
+  <Story name="Basic">
+    {
+    () => {
+      const [isOpen , setIsOpen]= useState(false)
+      return (
+        <Preview>
+
+        <Button buttonText="Modal open"  onClick={() => setIsOpen(true)} />
+        <Modal
+            isOpen={isOpen}
+            onClose={() => setIsOpen(false)}
+        >
+          <div>Modal Content</div>
+        </Modal>
+        </Preview>
+      );
+    }}
+
+  </Story>
+
+```tsx
+const [isOpen , setIsOpen]= useState(false)
+
+<Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+  {children}
+</Modal>
+```
+
+## Padding Size
+
+ <Story name="Padding Size">
+    {
+    () => {
+      const [isOpen , setIsOpen]= useState(false)
+      return (
+        <Preview>
+
+        <Button buttonText="Modal open"  onClick={() => setIsOpen(true)} />
+        <Modal
+            isOpen={isOpen}
+            onClose={() => setIsOpen(false)}
+            px='20px'
+            py='40px'
+        >
+          <div>Modal Content</div>
+        </Modal>
+        </Preview>
+      );
+    }}
+
+  </Story>
+
+```tsx
+const [isOpen , setIsOpen]= useState(false)
+
+<Modal px='20px' py='40px' isOpen={isOpen} onClose={() => setIsOpen(false)}>
+  {children}
+</Modal>
+```
+
+## Gap Size
+
+ <Story name="Gap Size">
+    {
+    () => {
+      const [isOpen , setIsOpen]= useState(false)
+      return (
+        <Preview>
+
+        <Button buttonText="Modal open"  onClick={() => setIsOpen(true)} />
+        <Modal
+            isOpen={isOpen}
+            onClose={() => setIsOpen(false)}
+            gap='50px'
+        >
+          <div>Modal Content</div>
+        </Modal>
+        </Preview>
+      );
+    }}
+
+  </Story>
+
+```tsx
+const [isOpen , setIsOpen]= useState(false)
+
+<Modal gap='50px' isOpen={isOpen} onClose={() => setIsOpen(false)}>
+  {children}
+</Modal>
+```

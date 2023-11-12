@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Handler } from '../../types';
+import { Handler } from '../../../types';
 
 export type ModalProps = {
   isOpen: boolean;
