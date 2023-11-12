@@ -1,13 +1,11 @@
 import { ReactElement } from 'react';
+import { Handler } from '../../types';
 
 export type ModalProps = {
   isOpen: boolean;
-  onClose: () => void;
+  onClose: Handler<() => void>;
   children: ReactElement;
-  //onConfirm: () => void;
-  // confirmLabel: string;
-  // cancleLabel: string;
-  // mainText: string;
-  // subText: string;
-  // secondLineText?: string;
+  px?: string;
+  py?: string;
+  gap?: string;
 };
