@@ -9,10 +9,11 @@ export const CheckBox = ({
   isChecked,
   onCheck,
   fontStyle = Fonts.caption,
+  isDisabled = false,
 }: CheckBoxProps) => {
   return (
     <UIProvider>
-      <S.Wrapper onClick={onCheck} $fontStyle={fontStyle}>
+      <S.Wrapper disabled={isDisabled} onClick={onCheck} $fontStyle={fontStyle}>
         <div>{isChecked ? svgCheck24 : svgUnCheck}</div>
         {label && <label>{label}</label>}
       </S.Wrapper>

@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div<{ $fontStyle: string }>`
+export const Wrapper = styled.button<{ $fontStyle: string }>`
   display: flex;
   align-items: center;
+  background-color: transparent;
+  border: none;
   gap: 4px;
   cursor: pointer;
   width: fit-content;

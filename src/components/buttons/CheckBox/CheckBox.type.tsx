@@ -6,4 +6,5 @@ export type CheckBoxProps = {
   onCheck: Handler;
   label?: string;
   fontStyle?: ValueOf<typeof Fonts>;
+  isDisabled?: boolean;
 };

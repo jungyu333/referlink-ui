@@ -1,0 +1,104 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { CheckBox } from './CheckBox';
+import { FeatureTable, Preview } from '../../../docs';
+import { useState } from 'react';
+
+<Meta title="Components/Buttons/CheckBox" component={CheckBox} />
+
+# CheckBox
+
+<br />
+
+## Features
+
+<FeatureTable
+  basics={['체크 박스', '클릭 콜백']}
+  additionals={['라벨', 'Font 크기 설정', 'isDisabled  (Default  false)']}
+/>
+
+## Props
+
+```tsx
+export type CheckBoxProps = {
+  isChecked: boolean;
+  onCheck: Handler;
+  label?: string;
+  fontStyle?: ValueOf<typeof Fonts>;
+  isDisabled?: boolean;
+};
+```
+
+## Basic
+
+    <Story name="Basic">
+      {() => {
+            const [isCheck, setIsCheck] = useState(false);
+            return (
+            <Preview>
+                <CheckBox
+                    label="Check Box"
+                    isChecked={isCheck}
+                    onCheck={() => setIsCheck((prev) => !prev)}
+                />
+            </Preview>
+            );
+      }}
+    </Story>
+
+```tsx
+const [isCheck, setIsCheck] = useState(false);
+
+<CheckBox
+  label="Check Box"
+  isChecked={isCheck}
+  onCheck={() => setIsCheck((prev) => !prev)}
+/>;
+```
+
+## No label
+
+<Story name="No Label">
+  {() => {
+    const [isCheck, setIsCheck] = useState(false);
+    return (
+      <Preview>
+        <CheckBox
+          isChecked={isCheck}
+          onCheck={() => setIsCheck((prev) => !prev)}
+        />
+      </Preview>
+    );
+  }}
+</Story>
+
+```tsx
+<CheckBox isChecked={isCheck} onCheck={() => setIsCheck((prev) => !prev)} />
+```
+
+## Disable
+
+<Story name="Disable">
+  {() => {
+    const [isCheck, setIsCheck] = useState(false);
+    return (
+      <Preview>
+        <CheckBox
+          isDisabled
+          label="Check Box"
+          isChecked={isCheck}
+          onCheck={() => setIsCheck((prev) => !prev)}
+        />
+      </Preview>
+    );
+  }}
+</Story>
+
+```tsx
+const [isCheck, setIsCheck] = useState(false);
+<CheckBox
+  isDisabled
+  label="Check Box"
+  isChecked={isCheck}
+  onCheck={() => setIsCheck((prev) => !prev)}
+/>;
+```
