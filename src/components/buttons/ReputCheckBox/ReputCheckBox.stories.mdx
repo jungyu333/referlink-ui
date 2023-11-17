@@ -1,0 +1,83 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { ReputCheckBox } from './ReputCheckBox';
+import { FeatureTable, Preview } from '../../../docs';
+import { useState } from 'react';
+
+<Meta title="Components/Buttons/ReputCheckBox" component={ReputCheckBox} />
+
+# Reput Check Box
+
+<br />
+
+## Features
+
+<FeatureTable
+  basics={['체크 박스', '라벨']}
+  additionals={['클릭 콜백', 'isCheckable  (Default  true)']}
+/>
+
+## Props
+
+```tsx
+export type ReputCheckBoxProps = {
+  label: string;
+  isChecked: boolean;
+  onCheck?: Handler;
+  isCheckable?: boolean;
+};
+```
+
+## Basic
+
+<Story name="Basic">
+  {() => {
+    const [isCheck, setIsCheck] = useState(false);
+    return (
+      <Preview>
+        <ReputCheckBox
+          label="Check Box"
+          isChecked={isCheck}
+          onCheck={() => setIsCheck((prev) => !prev)}
+        />
+      </Preview>
+    );
+  }}
+</Story>
+
+```tsx
+const [isCheck, setIsCheck] = useState(false);
+
+<ReputCheckBox
+  label="Check Box"
+  isChecked={isCheck}
+  onCheck={() => setIsCheck((prev) => !prev)}
+/>;
+```
+
+## IsCheckable
+
+<Story name="IsCheckable">
+  {() => {
+    const [isCheck, setIsCheck] = useState(true);
+    return (
+      <Preview>
+        <ReputCheckBox
+          label="Check Box"
+          isChecked={isCheck}
+          onCheck={() => setIsCheck((prev) => !prev)}
+          isCheckable={false}
+        />
+      </Preview>
+    );
+  }}
+</Story>
+
+```tsx
+const [isCheck, setIsCheck] = useState(true);
+<ReputCheckBox
+  label="Check Box"
+  isChecked={isCheck}
+  onCheck={() => setIsCheck((prev) => !prev)}
+  isCheckable={false}
+/>;
+```
