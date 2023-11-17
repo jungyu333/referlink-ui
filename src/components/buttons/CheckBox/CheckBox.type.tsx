@@ -3,7 +3,7 @@ import { Handler, ValueOf } from '../../../types';
 
 export type CheckBoxProps = {
   isChecked: boolean;
-  onCheck: Handler;
+  onCheck?: Handler;
   label?: string;
   fontStyle?: ValueOf<typeof Fonts>;
   isDisabled?: boolean;
