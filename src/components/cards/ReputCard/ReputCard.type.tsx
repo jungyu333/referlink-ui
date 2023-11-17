@@ -5,5 +5,5 @@ export type ReputCardProps = {
   headContent: string;
   date: string;
   onClick: Handler;
-  isChecked: boolean;
+  isChecked?: boolean;
 };

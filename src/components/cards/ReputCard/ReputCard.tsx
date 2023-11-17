@@ -9,7 +9,7 @@ export const ReputCard = ({
   headContent,
   date,
   onClick,
-  isChecked,
+  isChecked = false,
 }: ReputCardProps) => {
   return (
     <UIProvider>

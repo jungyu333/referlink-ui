@@ -1,0 +1,70 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ReputCard } from './ReputCard';
+import { FeatureTable, Preview } from '../../../docs';
+
+<Meta title="Components/Cards/ReputCard" component={ReputCard} />
+
+# Reput Card
+
+<br />
+
+## Features
+
+<FeatureTable
+  basics={['card 본문', 'card 제목', '작성 날짜', '클릭 콜백']}
+  additionals={['평판 공개&비공개']}
+/>
+
+## Props
+
+```tsx
+export type ReputCardProps = {
+  mainContent: string;
+  headContent: string;
+  date: string;
+  onClick: Handler;
+  isChecked?: boolean;
+};
+```
+
+### 1. Base
+
+<Preview>
+  <ReputCard
+    mainContent="카드 본문 텍스트"
+    headContent="카드 제목 텍스트"
+    date="2023.08.24"
+    onClick={() => console.log('click')}
+  />
+</Preview>
+
+```tsx
+<ReputCard
+  mainContent="카드 본문 텍스트"
+  headContent="카드 제목 텍스트"
+  date="2023.08.24"
+  onClick={() => console.log('click')}
+/>
+```
+
+### 2. On Check
+
+<Preview>
+  <ReputCard
+    mainContent="카드 본문 텍스트"
+    headContent="카드 제목 텍스트"
+    date="2023.08.24"
+    onClick={() => console.log('click')}
+    isChecked
+  />
+</Preview>
+
+```tsx
+<ReputCard
+  mainContent="카드 본문 텍스트"
+  headContent="카드 제목 텍스트"
+  date="2023.08.24"
+  onClick={() => console.log('click')}
+  isChecked
+/>
+```
