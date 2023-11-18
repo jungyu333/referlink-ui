@@ -3,7 +3,7 @@ import { Handler } from '../../../types';
 
 export type ModalProps = {
   isOpen: boolean;
-  onClose: Handler<() => void>;
+  onClose: Handler;
   children: ReactElement;
   px?: string;
   py?: string;
