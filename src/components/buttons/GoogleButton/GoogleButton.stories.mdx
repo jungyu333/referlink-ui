@@ -1,0 +1,67 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { GoogleButton } from './GoogleButton';
+import { FeatureTable, Preview } from '../../../docs';
+import { Fonts } from '../../../constants';
+
+<Meta title="Components/Buttons/GoogleButton" component={GoogleButton} />
+
+# Google Button
+
+## Features
+
+<FeatureTable
+  basics={['Button Text', '클릭 시 동작']}
+  additionals={[
+    'width (Default 400px)',
+    'height (Default 58px)',
+    'fontStyle (Default subtitle2)',
+  ]}
+/>
+
+## Props
+
+```tsx
+export type GoogleButtonProps = {
+  buttonText: string;
+  onClick: Handler;
+  width?: string;
+  height?: string;
+  fontStyle?: ValueOf<typeof Fonts>;
+};
+```
+
+## Google Button Type
+
+### 1. Default
+
+<Preview>
+  <GoogleButton
+    buttonText="Google Button"
+    onClick={() => console.log('button click')}
+  />
+</Preview>
+
+```tsx
+<GoogleButton
+  buttonText="Google Button"
+  onClick={() => console.log('button click')}
+/>
+```
+
+### 2. Font fontStyle
+
+<Preview>
+  <GoogleButton
+    buttonText="Google Button"
+    onClick={() => console.log('button click')}
+    fontStyle={Fonts.subtitle1}
+  />
+</Preview>
+
+```tsx
+<GoogleButton
+  buttonText="Google Button"
+  onClick={() => console.log('button click')}
+  fontStyle={Fonts.subtitle1}
+/>
+```
