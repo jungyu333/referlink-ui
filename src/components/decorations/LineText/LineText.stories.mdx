@@ -1,0 +1,42 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { LineText } from './LineText';
+import { FeatureTable, Preview } from '../../../docs';
+
+<Meta title="Components/Decorations/LineText" component={LineText} />
+
+# LineText
+
+<br />
+
+## Features
+
+<FeatureTable basics={['label']} additionals={['width (Default 400px)']} />
+
+## Props
+
+```tsx
+export type LineTextProps = {
+  label: string;
+  width?: string;
+};
+```
+
+### 1. Default
+
+<Preview>
+  <LineText label="SNS 간편 로그인" />
+</Preview>
+
+```tsx
+<LineText label="SNS 간편 로그인" />
+```
+
+### 2. Custom Width
+
+<Preview>
+  <LineText label="SNS 간편 로그인" width="500px" />
+</Preview>
+
+```tsx
+<LineText label="SNS 간편 로그인" width="500px" />
+```
