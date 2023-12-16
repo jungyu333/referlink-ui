@@ -12,10 +12,7 @@ import { useState } from 'react';
 
 ## Features
 
-<FeatureTable
-  basics={['로딩 영역 블러 및 loading 인디케이터']}
-  additionals={[]}
-/>
+<FeatureTable basics={['로딩 영역 블러 및 loading 인디케이터']} />
 
 ## Props
 
@@ -37,7 +34,7 @@ export type LoadingSpinnerProps = {
 
     return (
       <Preview>
-        <div >
+        <div  id={'body'}  >
           <div >
             <LoadingSpinner isLoading={isLoading}>
               <div>
