@@ -1,0 +1,63 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { LoadingSpinner } from './LoadingSpinner';
+import { FeatureTable, Preview } from '../../../docs';
+import { Button } from '../../buttons/Button';
+import { useState } from 'react';
+
+<Meta title="Components/Generals/LoadingSpinner" component={LoadingSpinner} />
+
+# LoadingSpinner
+
+<br />
+
+## Features
+
+<FeatureTable
+  basics={['로딩 영역 블러 및 loading 인디케이터']}
+  additionals={[]}
+/>
+
+## Props
+
+```tsx
+export type LoadingSpinnerProps = {
+  isLoading: boolean;
+  children: ReactElement;
+};
+```
+
+## Loading Spinner
+
+### 1. Basic
+
+<Story name='Basic'>
+{
+  () => {
+    const [isLoading, setIsLoading] = useState(false);
+
+    return (
+      <Preview>
+        <div >
+          <div >
+            <LoadingSpinner isLoading={isLoading}>
+              <div>
+
+              </div>
+            </LoadingSpinner>
+          </div>
+          <Button buttonText='Toggle Loading' onClick={()=>setIsLoading(!isLoading)}   />
+        </div>
+      </Preview>
+    )
+
+}
+}
+
+</Story>
+
+```tsx
+const [isLoading, setIsLoading] = useState(false);
+<LoadingSpinner isLoading={isLoading}>
+  <div>Content</div>
+</LoadingSpinner>;
+```
