@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { ReputCard } from './ReputCard';
 
 const meta: Meta<typeof ReputCard> = {
-  title: 'Components/cards/ReputCard',
+  title: 'Components/Cards/ReputCard',
   component: ReputCard,
 };
 
