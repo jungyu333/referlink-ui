@@ -27,7 +27,7 @@ export const LoadingSpinner = ({
           <S.Wrapper $isVisible={isVisible}>
             <S.Spinner />
           </S.Wrapper>,
-          document.getElementById('body')!,
+          document.getElementsByTagName('body')[0],
         )}
     </UIProvider>
   );
