@@ -18,7 +18,7 @@ export const Spinner = styled.div`
   animation: ${rotate} 1s linear infinite;
 `;
 
-export const Wrapper = styled.div<{ $isVisible: boolean }>`
+export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,9 +27,7 @@ export const Wrapper = styled.div<{ $isVisible: boolean }>`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.4);
   z-index: 9999;
   transition: opacity 1 ease-out;
-  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
-  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
 `;

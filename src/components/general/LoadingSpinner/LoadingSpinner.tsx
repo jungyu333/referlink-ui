@@ -8,23 +8,12 @@ export const LoadingSpinner = ({
   isLoading,
   children,
 }: LoadingSpinnerProps) => {
-  const [isVisible, setIsVisible] = useState(isLoading);
-
-  useEffect(() => {
-    if (!isLoading) {
-      const timer = setTimeout(() => setIsVisible(false), 500);
-
-      return () => clearTimeout(timer);
-    }
-    setIsVisible(true);
-  }, [isLoading]);
-
   return (
     <UIProvider>
       {children}
-      {isVisible &&
+      {isLoading &&
         createPortal(
-          <S.Wrapper $isVisible={isVisible}>
+          <S.Wrapper>
             <S.Spinner />
           </S.Wrapper>,
           document.getElementsByTagName('body')[0],
