@@ -1,0 +1,76 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { TextArea } from './TextArea';
+import { FeatureTable, Preview } from '../../../docs';
+
+<Meta title="Components/Inputs/TextArea" component={TextArea} />
+
+# TextArea Input
+
+<br />
+
+## Features
+
+<FeatureTable
+  basics={['placeholder', 'register']}
+  additionals={[
+    'error 필드 메세지',
+    'width (Default  1052px)',
+    'height (Default  170px)',
+    'px (Default  20px)',
+    'py (Default  20px)',
+  ]}
+/>
+
+## Props
+
+```tsx
+export type TextAreaProps = {
+  placeholder: string;
+  register: UseFormRegisterReturn;
+  error?: string;
+  width?: string;
+  height?: string;
+  px?: string;
+  py?: string;
+};
+```
+
+### 1. Default
+
+<Preview>
+  <TextArea
+    placeholder="지원자님에 대한 솔직한 의견을 작성해주세요"
+    register={undefined}
+  />
+</Preview>
+
+```tsx
+<TextArea
+  {...register('prosAndCons', {
+    required: '지원자님의 장/단점을 작성해주세요.',
+  })}
+  placeholder="지원자님에 대한 솔직한 의견을 작성해주세요"
+/>
+```
+
+### 2. Error Message
+
+<Preview>
+  <TextArea
+    placeholder="지원자님에 대한 솔직한 의견을 작성해주세요"
+    register={undefined}
+    error="error message"
+
+/>
+
+</Preview>
+
+```tsx
+<TextArea
+  {...register('prosAndCons', {
+    required: '지원자님의 장/단점을 작성해주세요.',
+  })}
+  placeholder="지원자님에 대한 솔직한 의견을 작성해주세요"
+  error="error message"
+/>
+```

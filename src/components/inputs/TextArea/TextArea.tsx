@@ -3,9 +3,9 @@ import { TextAreaProps } from './TextArea.type';
 import * as S from './textarea.styles';
 
 export const TextArea = ({
-  error,
   register,
   placeholder,
+  error,
   width = '1052px',
   height = '170px',
   px = '20px',
