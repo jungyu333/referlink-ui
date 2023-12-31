@@ -8,4 +8,5 @@ export type EmailInputProps = {
   width?: string;
   height?: string;
   isLabel?: boolean;
+  readOnly?: boolean;
 };

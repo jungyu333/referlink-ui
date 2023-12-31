@@ -11,6 +11,7 @@ export const EmailInput = ({
   width = '400px',
   height = '56px',
   isLabel = true,
+  readOnly = false,
 }: EmailInputProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -31,6 +32,7 @@ export const EmailInput = ({
               autoComplete="off"
               type="email"
               placeholder={placeholder}
+              readOnly={readOnly}
             />
           </div>
         </S.InnerContainer>
