@@ -8,4 +8,5 @@ export type TextAreaProps = {
   height?: string;
   px?: string;
   py?: string;
+  readOnly?: boolean;
 };

@@ -10,6 +10,7 @@ export const TextArea = ({
   height = '170px',
   px = '20px',
   py = '20px',
+  readOnly = false,
 }: TextAreaProps) => {
   return (
     <UIProvider>
@@ -20,7 +21,7 @@ export const TextArea = ({
         $px={px}
         $py={py}
       >
-        <textarea {...register} placeholder={placeholder} />
+        <textarea {...register} placeholder={placeholder} readOnly={readOnly} />
         {error && <S.Validation>{error}</S.Validation>}
       </S.Wrapper>
     </UIProvider>
