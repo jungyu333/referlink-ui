@@ -8,4 +8,5 @@ export type PasswordInputProps = {
   isLabel?: boolean;
   width?: string;
   height?: string;
+  readOnly?: boolean;
 };

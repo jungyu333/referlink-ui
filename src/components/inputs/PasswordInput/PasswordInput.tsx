@@ -12,6 +12,7 @@ export const PasswordInput = ({
   isLabel = true,
   width = '400px',
   height = '56px',
+  readOnly = false,
 }: PasswordInputProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const [isShowPassWord, setIsShowPassWord] = useState(false);
@@ -33,6 +34,7 @@ export const PasswordInput = ({
               onBlur={() => setIsFocused(false)}
               type={isShowPassWord ? 'text' : 'password'}
               placeholder={placeholder}
+              readOnly={readOnly}
             />
 
             <span onClick={() => setIsShowPassWord((prev) => !prev)}>
