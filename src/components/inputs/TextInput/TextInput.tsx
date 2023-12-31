@@ -11,6 +11,7 @@ export const TextInput = ({
   width = '400px',
   height = '56px',
   isLabel = true,
+  readonly = false,
 }: TextInputProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -31,6 +32,7 @@ export const TextInput = ({
               type="text"
               autoComplete="off"
               placeholder={placeholder}
+              readOnly={readonly}
             />
           </div>
         </S.InnerContainer>

@@ -8,4 +8,5 @@ export type TextInputProps = {
   isLabel?: boolean;
   width?: string;
   height?: string;
+  readonly?: boolean;
 };
